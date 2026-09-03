@@ -1,0 +1,695 @@
+[
+  {
+      "anonymous": false,
+      "inputs": [
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "credentialID",
+          "type": "uint256"
+      },
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "groupID",
+          "type": "uint256"
+      }
+      ],
+      "name": "GroupCredentialRemoved",
+      "type": "event"
+  },
+  {
+      "anonymous": false,
+      "inputs": [
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "credentialID",
+          "type": "uint256"
+      },
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "groupID",
+          "type": "uint256"
+      }
+      ],
+      "name": "GroupCredentialSaved",
+      "type": "event"
+  },
+  {
+      "anonymous": false,
+      "inputs": [
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "credentialID",
+          "type": "uint256"
+      },
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "groupID",
+          "type": "uint256"
+      }
+      ],
+      "name": "GroupCredentialUpdated",
+      "type": "event"
+  },
+  {
+      "anonymous": false,
+      "inputs": [
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "credentialID",
+          "type": "uint256"
+      },
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "userID",
+          "type": "uint256"
+      }
+      ],
+      "name": "UserCredentialRemoved",
+      "type": "event"
+  },
+  {
+      "anonymous": false,
+      "inputs": [
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "credentialID",
+          "type": "uint256"
+      },
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "userID",
+          "type": "uint256"
+      }
+      ],
+      "name": "UserCredentialSaved",
+      "type": "event"
+  },
+  {
+      "anonymous": false,
+      "inputs": [
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "credentialID",
+          "type": "uint256"
+      },
+      {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "userID",
+          "type": "uint256"
+      }
+      ],
+      "name": "UserCredentialUpdated",
+      "type": "event"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "groupProjectID",
+          "type": "uint256"
+      }
+      ],
+      "name": "getAllGroupCredentialsByGroupProjectID",
+      "outputs": [
+      {
+          "components": [
+          {
+              "internalType": "uint256",
+              "name": "credentialID",
+              "type": "uint256"
+          },
+          {
+              "internalType": "string",
+              "name": "userName",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "password",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "domain",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "website",
+              "type": "string"
+          },
+          {
+              "internalType": "uint256",
+              "name": "version",
+              "type": "uint256"
+          }
+          ],
+          "internalType": "struct PasswordManager.CredentialWithID[]",
+          "name": "groupCredentials",
+          "type": "tuple[]"
+      }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "userID",
+          "type": "uint256"
+      }
+      ],
+      "name": "getAllUserCredentialsByUserID",
+      "outputs": [
+      {
+          "components": [
+          {
+              "internalType": "uint256",
+              "name": "credentialID",
+              "type": "uint256"
+          },
+          {
+              "internalType": "string",
+              "name": "userName",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "password",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "domain",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "website",
+              "type": "string"
+          },
+          {
+              "internalType": "uint256",
+              "name": "version",
+              "type": "uint256"
+          }
+          ],
+          "internalType": "struct PasswordManager.CredentialWithID[]",
+          "name": "userCredentials",
+          "type": "tuple[]"
+      }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "input",
+          "type": "uint256"
+      }
+      ],
+      "name": "getEnterNumber",
+      "outputs": [
+      {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+      }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "string",
+          "name": "input",
+          "type": "string"
+      }
+      ],
+      "name": "getEnterString",
+      "outputs": [
+      {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+      }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "groupProjectCredentialID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "groupProjectID",
+          "type": "uint256"
+      }
+      ],
+      "name": "getGroupCredential",
+      "outputs": [
+      {
+          "components": [
+          {
+              "internalType": "string",
+              "name": "userName",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "password",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "domain",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "website",
+              "type": "string"
+          },
+          {
+              "internalType": "uint256",
+              "name": "version",
+              "type": "uint256"
+          }
+          ],
+          "internalType": "struct PasswordManager.Credential",
+          "name": "groupCredential",
+          "type": "tuple"
+      }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+  },
+  {
+      "inputs": [],
+      "name": "getOne",
+      "outputs": [
+      {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+      }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "userCredentialID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "userID",
+          "type": "uint256"
+      }
+      ],
+      "name": "getUserCredential",
+      "outputs": [
+      {
+          "components": [
+          {
+              "internalType": "string",
+              "name": "userName",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "password",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "domain",
+              "type": "string"
+          },
+          {
+              "internalType": "string",
+              "name": "website",
+              "type": "string"
+          },
+          {
+              "internalType": "uint256",
+              "name": "version",
+              "type": "uint256"
+          }
+          ],
+          "internalType": "struct PasswordManager.Credential",
+          "name": "userCredential",
+          "type": "tuple"
+      }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+      }
+      ],
+      "name": "groupCredentialOwner",
+      "outputs": [
+      {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+      }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+      }
+      ],
+      "name": "groupCredentials",
+      "outputs": [
+      {
+          "internalType": "string",
+          "name": "userName",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "password",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "domain",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "website",
+          "type": "string"
+      },
+      {
+          "internalType": "uint256",
+          "name": "version",
+          "type": "uint256"
+      }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "groupProjectCredentialID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "groupProjectID",
+          "type": "uint256"
+      }
+      ],
+      "name": "removeGroupCredential",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "userCredentialID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "userID",
+          "type": "uint256"
+      }
+      ],
+      "name": "removeUserCredential",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "groupProjectCredentialID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "groupProjectID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "string",
+          "name": "userName",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "password",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "domain",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "website",
+          "type": "string"
+      }
+      ],
+      "name": "saveGroupCredential",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "userCredentialID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "userID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "string",
+          "name": "userName",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "password",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "domain",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "website",
+          "type": "string"
+      }
+      ],
+      "name": "saveUserCredential",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "groupProjectCredentialID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "groupProjectID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "string",
+          "name": "userName",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "password",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "domain",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "website",
+          "type": "string"
+      }
+      ],
+      "name": "updateGroupCredential",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "userCredentialID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "userID",
+          "type": "uint256"
+      },
+      {
+          "internalType": "string",
+          "name": "userName",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "password",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "domain",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "website",
+          "type": "string"
+      }
+      ],
+      "name": "updateUserCredential",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+      }
+      ],
+      "name": "userCredentialOwner",
+      "outputs": [
+      {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+      }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+  },
+  {
+      "inputs": [
+      {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+      },
+      {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+      }
+      ],
+      "name": "userCredentials",
+      "outputs": [
+      {
+          "internalType": "string",
+          "name": "userName",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "password",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "domain",
+          "type": "string"
+      },
+      {
+          "internalType": "string",
+          "name": "website",
+          "type": "string"
+      },
+      {
+          "internalType": "uint256",
+          "name": "version",
+          "type": "uint256"
+      }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+  }
+]
